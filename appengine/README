@@ -1,5 +1,0 @@
-This is a simple web server for a remote host that throws HTTP errors when you need them.
-
-TwitchErorr was developed as an aid for debugging and testing transparent proxies.
-
-It's currently written as a very simple app engine server which can only throw 500 errors, but I'd like to re-write it in node.js to throw any error type.
