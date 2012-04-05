@@ -20,7 +20,11 @@ exports.runServer = function ( portNum ) {
 			var errorCode = parseInt( req[input].error, 10 );
 			if ( !errorCode ) {
 				// no code, return a splash page
-				fs.readFile( 'splash.html', function( err, data ) {
+				fs.readFile( __dirname + '/splash.html', function( err, data ) {
+					if ( err ) {
+						res.writeHead( 500, { "content-type": "text/html" });
+						res.end( err + "Lol, I couldn't load the splash page" );
+					}
 					res.writeHead( 200, { "content-type": "text/html" });
 					res.end( data );
 				});
