@@ -1,3 +1,7 @@
 TwitchErorr is a webapp for testing proxies that acts as a simple server which returns HTTP error codes on request.
 
-The project was originally implemented as a very simple App Engine Python, but is being re-written as a node.js project.
+It's implemented in node.js and you're free to copy, redeploy, and edit it however you feel.
+
+TwitchErorr is currently running on Nodester, go to: http://twitcherorr.nodester.com/ to use it, and for more detailed instructions.
+
+Project Creator: Leigh Pauls leighpauls.com
