@@ -1,4 +1,5 @@
 var express = require( "express" );
+var fs = require("fs");
 
 exports.runServer = function ( portNum ) {
 	var app = express.createServer();
@@ -19,8 +20,12 @@ exports.runServer = function ( portNum ) {
 			var errorCode = parseInt( req[input].error, 10 );
 			if ( !errorCode ) {
 				// no code, return a splash page
-				// TODO: make this not a piece of crap
-				res.send( "Use thisserver.com/?error=XYZ, where XYZ is any valid server reponse code, and it will be returned\n" );
+				fs.readFile( 'splash.html', function( err, data ) {
+					res.writeHead( 200, { "content-type": "text/html" });
+					res.end( data );
+				});
+
+
 				return;
 			}
 
@@ -56,5 +61,5 @@ if ( module === require.main ) {
 	// look at the first parameter for the port num
 	var portNum = parseInt( process.argv[2], 10 ) || 8080;
 
-	runServer( portNum );
+	exports.runServer( portNum );
 }

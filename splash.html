@@ -1,0 +1,26 @@
+<html>
+  <body>
+	TwitchErorr is a quick and easy way to test how your HTTP proxy or client handles different HTTP status codes.
+	<br/><br/><br/>
+	<b>--Usage--</b><br/>
+	With either a GET or POST request, supply the following arguments:
+	<br/><br/>
+	<b>error</b> <i>(required)</i> <br/>
+	Any HTTP status code you can think of. Invalid or crazy codes may get transformed into something more "reasonable" by the server, but any code you can expect out in the wild should work fine.<br/>
+	If not provided, then this splash page will be displaed.
+	<br/><br/>
+	<b>delay</b> <i>(optional)</i> <br/>
+	The delay in milliseconds that the server should wait before sending the response (including the header). <br/>
+	If not provided, then the reposnse will be sent immediately.
+	<br/><br/>
+	<b>content</b> <i>(optional)</i> <br/>
+	Content to be placed into the body of the reposnse.<br/>
+	If not provided, then the empty string "" will be used.
+	<br/><br/><br/>
+	<b>--Example--</b><br/>
+	To return a 506 error, with a 5.3 second delay, containing the string "Eat my shorts", use:<br/><br/>
+	<div style="font-family: monospace;">
+	http://twitcherorr.nodester.com/?error=506&delay=5300&content=Eat%20my%20shorts
+	</div>
+  </body>
+</html>
